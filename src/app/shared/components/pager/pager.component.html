@@ -1,0 +1,11 @@
+<pagination 
+    [boundaryLinks]="true" 
+    [totalItems]="totalItems"
+    [itemsPerPage]="itemsPerPage"
+    [maxSize]="10"
+    previousText="&lsaquo;" 
+    nextText="&rsaquo;" 
+    firstText="&laquo;" 
+    lastText="&raquo;"
+    (pageChanged)="GoToPage($event)">
+</pagination>
