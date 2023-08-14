@@ -11,6 +11,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './home/home.module';
 import { ToastrModule } from 'ngx-toastr';
 import { ProductsModule } from './view/products/products.module';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ProductsModule } from './view/products/products.module';
     SharedModule,
     HttpClientModule,
     HomeModule,
+    CoreModule,
     ProductsModule
   ],
   providers: [
