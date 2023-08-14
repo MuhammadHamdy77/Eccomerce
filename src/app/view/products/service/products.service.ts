@@ -52,4 +52,8 @@ export class ProductsService {
   GetBrands():Observable<Pagination>{
     return this.genericService.getAll(`product/brands`);
   }
+  // Get Products By ID
+  GetProductsByID(id:number){
+    return this.genericService.getAll(`product/${id}`);
+  }
 }

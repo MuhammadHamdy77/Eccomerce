@@ -43,10 +43,9 @@ sortOptions = [
         this.isLoading = false;
       },
       error:(err) =>{
-        console.log(err)
+        console.log(err);
       },
       complete:()=>{
-        console.log('complete')
       }
     })
   }
@@ -56,14 +55,12 @@ sortOptions = [
     this.productsService.GetTypes().subscribe({
       next:(res:any) =>{
         this.AllTypes = [{id:0 , name:"Alll"},...res]
-        console.log(this.AllTypes);
         this.isLoading = false;
       },
       error:(err) =>{
-        console.log(err)
+        console.log(err);
       },
       complete:()=>{
-        console.log("Complete");
       }
     })
   }
@@ -79,7 +76,6 @@ sortOptions = [
         console.log(err)
       },
       complete:()=>{
-        console.log("Complete")
       }
     })
   }

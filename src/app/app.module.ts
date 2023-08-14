@@ -9,6 +9,9 @@ import {  JwtInterceptorInterceptor } from './core/interceptors/jwt-interceptor.
 import {  ErrorinterceptorInterceptor } from './core/interceptors/errorinterceptor.interceptor';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './home/home.module';
+import { ToastrModule } from 'ngx-toastr';
+import { ProductsModule } from './view/products/products.module';
+
 
 @NgModule({
   declarations: [
@@ -18,9 +21,11 @@ import { HomeModule } from './home/home.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     SharedModule,
     HttpClientModule,
-    HomeModule
+    HomeModule,
+    ProductsModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS , useClass: JwtInterceptorInterceptor, multi:true},
