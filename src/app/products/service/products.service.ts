@@ -1,9 +1,9 @@
-import { ParamsProd } from '../../../core/models/ParamsProd';
 import { Observable, map } from 'rxjs';
-import { GenericService } from './../../../core/services/generic.service';
 import { Injectable } from '@angular/core';
 import { Pagination } from 'src/app/core/models/pagination';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { GenericService } from 'src/app/core/services/generic.service';
+import { ParamsProd } from 'src/app/core/models/ParamsProd';
 
 @Injectable({
   providedIn: 'root'

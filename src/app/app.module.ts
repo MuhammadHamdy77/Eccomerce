@@ -10,7 +10,6 @@ import {  ErrorinterceptorInterceptor } from './core/interceptors/errorintercept
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './home/home.module';
 import { ToastrModule } from 'ngx-toastr';
-import { ProductsModule } from './view/products/products.module';
 import { CoreModule } from './core/core.module';
 
 
@@ -27,7 +26,6 @@ import { CoreModule } from './core/core.module';
     HttpClientModule,
     HomeModule,
     CoreModule,
-    ProductsModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS , useClass: JwtInterceptorInterceptor, multi:true},

@@ -24,8 +24,7 @@ export class ErrorinterceptorInterceptor implements HttpInterceptor {
         if(err){
             if (err.status === 401) {
                 // auto logout if 401 response returned from api
-                this.authService.logout();
-                location.href="";
+                this.toastr.error(err.error.message, err.status.toString())
             }
             if (err.status === 400) {
               if(err.error.errors)
@@ -41,7 +40,6 @@ export class ErrorinterceptorInterceptor implements HttpInterceptor {
             if (err.status === 404) {
               // auto logout if 401 response returned from api
               this.router.navigateByUrl('/not-found')
-              location.href="";
             }
             if(err.status==500)
             {

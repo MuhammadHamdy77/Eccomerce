@@ -5,7 +5,7 @@ import { ViewProdComponent } from './components/view-prod/view-prod.component';
 import { EditProdComponent } from './components/edit-prod/edit-prod.component';
 
 const routes: Routes = [
-  { path: '' , component:ListProdComponent},
+  { path: '' , component:ListProdComponent,data:{breadcrumb:'Products'}},
   { path: 'view/:id' , component:ViewProdComponent},
   { path: 'edit/:id' , component:EditProdComponent},
 ];

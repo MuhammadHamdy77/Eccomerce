@@ -7,10 +7,11 @@ import { HomeComponent } from './home/components/home/home.component';
 
 const routes: Routes = [
   {path: '' , component:HomeComponent,data:{breadcrumb:'Home'}},
-  {path:'test-error',component:TestErrorComponent,pathMatch:'full'},
-  {path:'not-found',component:NotFoundComponent,pathMatch:'full'},
-  {path:'server-error',component:ServerErrorComponent,pathMatch:'full'},
-  {path: 'products' , loadChildren:()=>import('./view/view.module').then(m=> m.ViewModule)},
+  {path:'test-error',component:TestErrorComponent},
+  {path:'not-found',component:NotFoundComponent},
+  {path:'server-error',component:ServerErrorComponent},
+  {path:'products' , loadChildren:()=>import('./products/products.module').then(m=> m.ProductsModule)},
+
 ];
 
 @NgModule({

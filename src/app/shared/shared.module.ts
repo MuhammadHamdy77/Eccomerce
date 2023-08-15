@@ -6,6 +6,8 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { PagerComponent } from './components/pager/pager.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { PagingHeaderComponent } from './components/paging-header/paging-header.component';
+import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
+import { BreadcrumbModule } from 'xng-breadcrumb';
 
 
 @NgModule({
@@ -13,19 +15,22 @@ import { PagingHeaderComponent } from './components/paging-header/paging-header.
     NavbarComponent,
     PagerComponent,
     LoaderComponent,
-    PagingHeaderComponent
+    PagingHeaderComponent,
+    BreadCrumbComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    BreadcrumbModule
   ],
   exports:[
     NavbarComponent,
     PaginationModule,
     PagerComponent,
     LoaderComponent,
-    PagingHeaderComponent
+    PagingHeaderComponent,
+    BreadCrumbComponent
   ]
 })
 export class SharedModule { }
