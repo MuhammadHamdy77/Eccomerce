@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <section class="col-3">
+            <h5 class="text-warning ms-3">Sort</h5>
+            <select class="form-select mb-4" (change)="onSortSelected($event)">
+                <option *ngFor="let item of sortOptions" [value]="item.value">{{item.name}}</option>
+            </select>
+            <h5 class="text-warning ms-3">Brands</h5>
+            <ul class="list-group my-3">
+                <li class="list-group-item" (click)="onSelectBrand(item.id)" [class.active]="item.id === ParamsProd.brandId"
+                *ngFor="let item of AllBrands">{{item?.name}}</li>
+            </ul>
+            <h5 class="text-warning ms-3">Types</h5>
+            <ul class="list-group my-3">
+              <li class="list-group-item" (click)="onSelectTypes(item.id)" [class.active]="item.id === ParamsProd.typeId"
+              *ngFor="let item of AllTypes">{{item?.name}}</li>
+            </ul>
+        </section>
+        <section class="col-9">
+          <div class="d-flex justify-content-between align-items-center pb-2">
+            <app-paging-header 
+              [pageNumber]="ParamsProd.pageNumber"
+              [pageSize]="ParamsProd.pageSize"
+              [totalCount]="totalCount">
+            </app-paging-header>
+             <div class="d-flex mt-2">
+                 <input type="text" placeholder="Search" class="form-control me-2" #search (keyup.enter)="onSearch()">
+                 <button class="btn btn-outline-primary mx-2" (click)="onSearch()">Search</button>
+                 <button class="btn btn-outline-success" (click)="onReset()">Reset</button>
+             </div>
+          </div>
+            <div class="row g-3 mb-4">
+                <div class="col-md-6 col-lg-3" *ngFor="let product of allProducts">
+                  <app-shop-item [product]="product"></app-shop-item>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+              <app-pager 
+                [itemsPerPage]="ParamsProd.pageSize" 
+                [totalItems]="totalCount"
+                (PageEmitter)="RedirectToPage($event)">
+              </app-pager>
+            </div>
+        </section>
+    </div>
+  </div>
+  
+  
+  <app-loader *ngIf="isLoading"></app-loader>

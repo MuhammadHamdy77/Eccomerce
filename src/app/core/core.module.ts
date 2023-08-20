@@ -5,6 +5,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ServerErrorComponent } from './components/server-error/server-error.component';
 import { ToastrModule } from 'ngx-toastr';
 import { RouterModule } from '@angular/router';
+import { BreadcrumbModule } from 'xng-breadcrumb';
 
 
 
@@ -22,6 +23,7 @@ import { RouterModule } from '@angular/router';
       positionClass: 'toast-bottom-right',
       preventDuplicates: true
     }),
+    BreadcrumbModule,
   ]
 })
 export class CoreModule { }

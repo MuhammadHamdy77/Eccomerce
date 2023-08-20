@@ -11,6 +11,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './home/home.module';
 import { ToastrModule } from 'ngx-toastr';
 import { CoreModule } from './core/core.module';
+import { ShopModule } from './shop/shop.module';
+import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 
 
 @NgModule({
@@ -26,10 +28,12 @@ import { CoreModule } from './core/core.module';
     HttpClientModule,
     HomeModule,
     CoreModule,
+    ShopModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS , useClass: JwtInterceptorInterceptor, multi:true},
     {provide:HTTP_INTERCEPTORS , useClass: ErrorinterceptorInterceptor, multi:true},
+    {provide:HTTP_INTERCEPTORS , useClass: LoadingInterceptor, multi:true},
   ],
   bootstrap: [AppComponent]
 })
