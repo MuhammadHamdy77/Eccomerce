@@ -1,5 +1,6 @@
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { SharedModule } from './shared/shared.module';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,7 +15,6 @@ import { CoreModule } from './core/core.module';
 import { ShopModule } from './shop/shop.module';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 
-
 @NgModule({
   declarations: [
     AppComponent
@@ -28,8 +28,10 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
     HttpClientModule,
     HomeModule,
     CoreModule,
-    ShopModule
+    ShopModule,
+    NgxSpinnerModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     {provide:HTTP_INTERCEPTORS , useClass: JwtInterceptorInterceptor, multi:true},
     {provide:HTTP_INTERCEPTORS , useClass: ErrorinterceptorInterceptor, multi:true},
