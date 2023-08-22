@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
@@ -8,7 +8,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { PagingHeaderComponent } from './components/paging-header/paging-header.component';
 import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 import { BreadcrumbModule } from 'xng-breadcrumb';
-
+import {CarouselModule} from 'ngx-bootstrap/carousel'
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import { BreadcrumbModule } from 'xng-breadcrumb';
     CommonModule,
     RouterModule,
     PaginationModule.forRoot(),
-    BreadcrumbModule
+    BreadcrumbModule,
+    CarouselModule.forRoot()
   ],
   exports:[
     NavbarComponent,
@@ -30,7 +31,9 @@ import { BreadcrumbModule } from 'xng-breadcrumb';
     PagerComponent,
     LoaderComponent,
     PagingHeaderComponent,
-    BreadCrumbComponent
-  ]
+    BreadCrumbComponent,
+    CarouselModule
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SharedModule { }

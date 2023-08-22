@@ -29,6 +29,9 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
     HomeModule,
     CoreModule,
     ShopModule,
+    NgxSpinnerModule.forRoot()
+  ],
+  exports:[
     NgxSpinnerModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
