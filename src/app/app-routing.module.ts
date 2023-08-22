@@ -7,13 +7,13 @@ import { HomeComponent } from './home/components/home/home.component';
 import { ListShopComponent } from './shop/components/list-shop/list-shop.component';
 
 const routes: Routes = [
-  {path: '' , component:HomeComponent ,data:{breadcrumb:'Home'}},
+  {path:'', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) , data:{breadcrumb:'Home'}},
   {path:'test-error',component:TestErrorComponent},
   {path:'not-found',component:NotFoundComponent},
   {path:'server-error',component:ServerErrorComponent},
-  // {path:'shop',loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule)},
-  {path:'shop',component:ListShopComponent , pathMatch:'full'},
-  
+  {path:'shop',loadChildren: ():any  => import('./shop/shop.module').then(m => m.ShopModule)},
+  {path:'basket',loadChildren: ():any  => import('./basket/basket.module').then(m => m.BasketModule)},
+  // {path:'shop',component:ListShopComponent},
 ];
 
 @NgModule({

@@ -38,3 +38,25 @@ label.xng-breadcrumb-trail
   background-color: #003d94 !important;
   border-color: #003d94 !important;
 }
+
+
+.text-decoration-none{
+  overflow-x: hidden;
+}
+
+.one-line {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 1 !important;
+  -webkit-box-orient: vertical;
+}
+
+.name-prod{
+  color: #000;
+  background-color: orange;
+  padding: 0 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 2em;
+}

@@ -26,9 +26,8 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
     ToastrModule.forRoot(),
     SharedModule,
     HttpClientModule,
-    HomeModule,
     CoreModule,
-    ShopModule,
+    HomeModule,
     NgxSpinnerModule.forRoot()
   ],
   exports:[

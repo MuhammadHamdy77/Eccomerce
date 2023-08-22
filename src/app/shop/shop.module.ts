@@ -22,6 +22,5 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   exports:[ListShopComponent],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 })
 export class ShopModule { }
